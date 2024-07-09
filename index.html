@@ -48,7 +48,7 @@
         }
         .photo-container {
             width: 100%;
-            height: 40%;
+            height: 40vh; /* 40% of the viewport height */
             overflow: hidden;
             margin: 20px auto;
             position: relative;
@@ -56,10 +56,8 @@
         .photo {
             width: 100%;
             height: auto;
-            position: absolute;
-            top: -30%;
-            left: 0;
             object-fit: cover;
+            transform: translateY(-30%); /* Move the image up by 30% */
         }
         .capsule-button {
             margin-top: 20px;
