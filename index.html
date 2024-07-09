@@ -12,7 +12,8 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #fff9c4, #fff59d, #fff176, #ffee58);
+            background: linear-gradient(135deg, rgba(255,249,196, 0.7), rgba(255,245,157, 0.7), rgba(255,241,118, 0.7), rgba(255,238,88, 0.7)), url('anniversary.jpeg') no-repeat center center fixed;
+            background-size: cover;
             font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
         }
@@ -45,19 +46,6 @@
         .names {
             font-size: 28px;
             margin-top: 30px;
-        }
-        .photo-container {
-            width: 100%;
-            height: 40vh; /* 40% of the viewport height */
-            overflow: hidden;
-            margin: 20px auto;
-            position: relative;
-        }
-        .photo {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            transform: translateY(-30%); /* Move the image up by 30% */
         }
         .capsule-button {
             margin-top: 20px;
@@ -170,9 +158,6 @@
         <div class="names">
             Akanksha's<br>
             Aprameya
-        </div>
-        <div class="photo-container">
-            <img src="anniversary.jpeg" alt="Our Special Moment" class="photo">
         </div>
         <button class="capsule-button">Open Time Capsule</button>
         <div class="time-capsule">
