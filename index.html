@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary, My Sunshine!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@300;400&family=Pacifico&display=swap');
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #fff9c4, #fff59d, #fff176, #ffee58);
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            position: relative;
+            overflow: hidden;
+        }
+        .flower {
+            font-size: 90px;
+            opacity: 0;
+            transform: scale(0) rotate(-180deg);
+            transition: all 2s ease-in-out;
+        }
+        .message, .names {
+            font-size: 24px;
+            margin-top: 20px;
+            opacity: 0;
+            color: #ff6b6b;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            transition: opacity 2s ease-in-out;
+            font-family: 'Dancing Script', cursive;
+            line-height: 1.6;
+        }
+        .names {
+            font-size: 28px;
+            margin-top: 30px;
+        }
+        .capsule-button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 20px;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Pacifico', cursive;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .capsule-button:hover {
+            background-color: #ff4757;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        .time-capsule {
+            display: none;
+            margin-top: 30px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .time-capsule h3 {
+            font-family: 'Pacifico', cursive;
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+        .time-capsule textarea {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid #ff6b6b;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        .time-capsule textarea:focus {
+            outline: none;
+            border-color: #ff4757;
+            box-shadow: 0 0 0 2px rgba(255,107,107,0.2);
+        }
+        .time-capsule button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #ffeb3b;
+            color: #333;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Pacifico', cursive;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .time-capsule button:hover {
+            background-color: #fdd835;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        .capsule-messages {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .capsule-messages h3 {
+            font-family: 'Pacifico', cursive;
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+        .capsule-message {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .capsule-message:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .capsule-message p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .capsule-message small {
+            font-family: 'Dancing Script', cursive;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flower">🌻💖🌻</div>
+        <div class="message">
+            Happy Anniversary, my sunshine! 💖<br><br>
+            You were telling that our honeymoon phase is over,<br>
+            so to prove you wrong, I created this website for you.<br><br>
+            Our love blooms eternally, just like this digital flower. 🌻
+        </div>
+        <div class="names">
+            Akanksha's<br>
+            Aprameya
+        </div>
+        <button class="capsule-button">Open Time Capsule</button>
+        <div class="time-capsule">
+            <h3>Add a memory for next year:</h3>
+            <textarea placeholder="Write your message here..."></textarea>
+            <button onclick="addToCapsule()">Add to Time Capsule</button>
+            <div class="capsule-messages"></div>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            setTimeout(() => {
+                document.querySelector('.flower').style.opacity = '1';
+                document.querySelector('.flower').style.transform = 'scale(1) rotate(0deg)';
+            }, 500);
+            setTimeout(() => {
+                document.querySelector('.message').style.opacity = '1';
+            }, 2500);
+            setTimeout(() => {
+                document.querySelector('.names').style.opacity = '1';
+            }, 4000);
+
+            document.querySelector('.capsule-button').addEventListener('click', function() {
+                document.querySelector('.time-capsule').style.display = 'block';
+                this.style.display = 'none';
+                loadCapsuleMessages();
+            });
+        };
+
+        function addToCapsule() {
+            const message = document.querySelector('.time-capsule textarea').value;
+            if (message.trim() !== '') {
+                const messages = JSON.parse(localStorage.getItem('capsuleMessages') || '[]');
+                messages.push({text: message, date: new Date().toISOString()});
+                localStorage.setItem('capsuleMessages', JSON.stringify(messages));
+                document.querySelector('.time-capsule textarea').value = '';
+                loadCapsuleMessages();
+            }
+        }
+
+        function loadCapsuleMessages() {
+            const messages = JSON.parse(localStorage.getItem('capsuleMessages') || '[]');
+            const messagesContainer = document.querySelector('.capsule-messages');
+            messagesContainer.innerHTML = '<h3>Messages for next anniversary:</h3>';
+            messages.forEach(message => {
+                const date = new Date(message.date);
+                messagesContainer.innerHTML += `
+                    <div class="capsule-message">
+                        <p>${message.text}</p>
+                        <small>${date.toLocaleDateString()}</small>
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
